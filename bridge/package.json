@@ -1,0 +1,12 @@
+{
+  "name": "claude-orchestrator-bridge",
+  "version": "1.0.0",
+  "description": "Local bridge server connecting claude.ai and Claude Code in VS Code",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "ws": "^8.18.0"
+  }
+}

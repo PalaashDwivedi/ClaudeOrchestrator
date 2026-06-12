@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      width: 260px;
+      background: #0f0f0f;
+      color: #e8e8e8;
+      font-family: 'SF Mono', 'Fira Code', monospace;
+      padding: 16px;
+    }
+
+    .header {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 16px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid #222;
+    }
+
+    .logo {
+      width: 24px; height: 24px;
+      background: linear-gradient(135deg, #6366f1, #a78bfa);
+      border-radius: 6px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 13px;
+    }
+
+    h1 { font-size: 13px; color: #fff; letter-spacing: 0.02em; }
+    h1 span { color: #6366f1; }
+
+    .status-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 8px 0;
+      border-bottom: 1px solid #1a1a1a;
+    }
+
+    .status-row:last-of-type { border-bottom: none; }
+
+    .label { font-size: 11px; color: #888; }
+
+    .dot {
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      background: #333;
+      transition: background 0.3s;
+    }
+    .dot.on { background: #4ade80; box-shadow: 0 0 6px #4ade8066; }
+    .dot.off { background: #f87171; }
+
+    .status-right { display: flex; align-items: center; gap: 6px; }
+    .status-text { font-size: 11px; color: #555; }
+    .status-text.on { color: #4ade80; }
+    .status-text.off { color: #f87171; }
+
+    .footer {
+      margin-top: 14px;
+      padding-top: 10px;
+      border-top: 1px solid #1a1a1a;
+      font-size: 10px;
+      color: #444;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <div class="logo">⬡</div>
+    <h1>Claude <span>Orchestrator</span></h1>
+  </div>
+
+  <div class="status-row">
+    <span class="label">Bridge server</span>
+    <div class="status-right">
+      <span class="status-text" id="bridge-text">checking...</span>
+      <div class="dot" id="bridge-dot"></div>
+    </div>
+  </div>
+
+  <div class="status-row">
+    <span class="label">Claude.ai tab</span>
+    <div class="status-right">
+      <span class="status-text" id="claude-text">checking...</span>
+      <div class="dot" id="claude-dot"></div>
+    </div>
+  </div>
+
+  <div class="status-row">
+    <span class="label">VS Code</span>
+    <div class="status-right">
+      <span class="status-text" id="vscode-text">checking...</span>
+      <div class="dot" id="vscode-dot"></div>
+    </div>
+  </div>
+
+  <div class="footer">ws://localhost:43210</div>
+
+  <script src="popup.js"></script>
+</body>
+</html>

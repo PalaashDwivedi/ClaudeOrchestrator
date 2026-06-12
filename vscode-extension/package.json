@@ -1,0 +1,29 @@
+{
+  "name": "claude-orchestrator",
+  "displayName": "Claude Orchestrator",
+  "description": "Bridges claude.ai and Claude Code — autonomous AI development loop",
+  "version": "1.0.0",
+  "engines": { "vscode": "^1.98.0" },
+  "categories": ["AI", "Other"],
+  "activationEvents": ["onStartupFinished"],
+  "main": "./src/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "claudeOrchestrator.start",
+        "title": "Claude Orchestrator: Start"
+      },
+      {
+        "command": "claudeOrchestrator.stop",
+        "title": "Claude Orchestrator: Stop"
+      },
+      {
+        "command": "claudeOrchestrator.sendToClaude",
+        "title": "Claude Orchestrator: Send current terminal output to Claude"
+      }
+    ]
+  },
+  "dependencies": {
+    "ws": "^8.18.0"
+  }
+}

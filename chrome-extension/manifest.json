@@ -1,0 +1,21 @@
+{
+  "manifest_version": 3,
+  "name": "Claude Orchestrator",
+  "version": "1.0.0",
+  "description": "Bridges claude.ai chat with Claude Code in VS Code",
+  "permissions": [ "activeTab", "scripting", "storage" ],
+  "host_permissions": [ "https://claude.ai/*", "http://localhost/*" ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": [ "https://claude.ai/*" ],
+      "js": [ "content.js" ],
+      "run_at": "document_idle"
+    }
+  ],
+  "action": {
+    "default_popup": "popup.html"
+  }
+}
